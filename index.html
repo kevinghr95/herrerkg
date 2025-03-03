@@ -3,90 +3,140 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kevin Herrera Rodriguez - Lab1</title>
-    <!-- 
-        Statement of Authorship:
-        Kevin Herrera Rodriguez
-        MacID: herrak4
-        Student Number: 001404740
-    -->
+    <title>Kevin Herrera Rodriguez - Resume</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
-            font-family: arial, sans-serif;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
         }
-        h1, h2 {
-            font-family: "times new roman", serif;
+        .container {
+            width: 800px;
+            margin: 20px auto;
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 4px 10px rgba(0, 0, 0, 0.1);
         }
-        h1 {
+        .header {
+            background: url('background.jpg') no-repeat center center/cover;
+            padding: 60px 30px;
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+        .header img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 5px solid white;
+            position: absolute;
+            top: 110px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        .header h1 {
+            font-size: 24px;
+            font-weight: 600;
+        }
+        .header p {
+            font-size: 16px;
+            font-weight: 300;
+        }
+        .content {
             display: flex;
-            align-items: center;
+            padding: 20px;
         }
-        h1 img {
-            width: 100px;
-            height: auto;
-            margin-right: 20px;
+        .left-column {
+            width: 35%;
+            padding: 20px;
+            background: #f0f0f0;
+            border-right: 2px solid #ddd;
         }
-        .work-title {
-            font-weight: bold;
-            font-style: italic;
+        .right-column {
+            width: 65%;
+            padding: 20px;
+        }
+        h2 {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        ul, ol {
+            padding-left: 20px;
         }
         footer {
             text-align: center;
-            margin-top: 20px;
+            padding: 15px;
+            background: #333;
+            color: white;
+            font-size: 14px;
         }
     </style>
 </head>
 <body>
-    <h1>
-        <img src="kevin_photo.jpg" alt="kevin herrera rodriguez">    
-        <i>kevin herrera rodriguez</i>
-    </h1>
-
-    <h2>education</h2>
-    <p><b>high school:</b> lakeshore catholic high school</p>
-    <p><b>college:</b> certificate of electrical techniques, niagara college, welland, on (september 2017 - april 2018)<br>
-        relevant courses: cad for design, electricity and electronics i & ii, health & safety - whmis</p>
-    <p><b>university:</b> bachelor of technology, automation engineering, mcmaster university | mohawk college (completion by december 2025)<br>
-        relevant courses: advanced plc programming, c++ programming, solidworks, autocad, instrumentation and control</p>
-
-    <h2>work</h2>
-    <div>
-        <p class="work-title"><a href="https://www.arterrawines.ca">arterra wines canada</a> - operations, production packaging engineering intern</p>
-        <ul>
-            <li>designed and implemented a qr code system, significantly reducing downtime and improving accessibility to critical machine data.</li>
-            <li>streamlined interdepartmental communication, fostering collaboration and improving operational efficiency.</li>
-            <li>resolved recurring machine issues through supplier collaboration, achieving cost-effective solutions and enhancing production reliability.</li>
-        </ul>
+<div class="container">
+    <div class="header">
+        <img src="kevin_photo.jpg" alt="Kevin Herrera Rodriguez">
+        <h1>Kevin Herrera Rodriguez</h1>
+        <p>Automation Engineering Technology | McMaster University</p>
     </div>
-
-    <div>
-        <p class="work-title"><a href="https://www.hrprojects.com">hr projects</a> - manager, estimator, and contractor</p>
-        <ul>
-            <li>managed all aspects of renovation projects, from estimation and design to on-time delivery, ensuring client satisfaction and project profitability.</li>
-            <li>supervised construction crews, providing clear direction and fostering teamwork to complete projects efficiently.</li>
-            <li>negotiated with suppliers to secure competitive pricing, optimizing budget allocation and resource management.</li>
-        </ul>
+    <div class="content">
+        <div class="left-column">
+            <div class="section">
+                <h2>Personal Profile</h2>
+                <p>Dedicated and innovative engineering student with a passion for automation, robotics, and control systems.</p>
+            </div>
+            <div class="section">
+                <h2>Contact</h2>
+                <p>Email: herrak4@mcmaster.ca</p>
+                <p>Phone: (123) 456-7890</p>
+                <p>LinkedIn: linkedin.com/in/kevin</p>
+            </div>
+            <div class="section">
+                <h2>Education</h2>
+                <p>Bachelor of Technology, Automation Engineering<br>McMaster University | Mohawk College<br>Expected Completion: Dec 2025</p>
+            </div>
+        </div>
+        <div class="right-column">
+            <div class="section">
+                <h2>Skills</h2>
+                <ul>
+                    <li>PLC Programming (Allen-Bradley, Siemens)</li>
+                    <li>C++, Python, MATLAB</li>
+                    <li>Robotics & Automation</li>
+                    <li>SolidWorks & AutoCAD</li>
+                </ul>
+            </div>
+            <div class="section">
+                <h2>Work Experience</h2>
+                <p><strong>Arterra Wines Canada - Operations Intern</strong></p>
+                <p>Sept 2023 - Present</p>
+                <ul>
+                    <li>Developed QR-based machine tracking system.</li>
+                    <li>Enhanced operational efficiency via interdepartmental collaboration.</li>
+                </ul>
+                <p><strong>HR Projects - Manager & Estimator</strong></p>
+                <p>2019 - 2023</p>
+                <ul>
+                    <li>Managed renovation projects from estimation to execution.</li>
+                    <li>Negotiated supplier pricing and optimized resources.</li>
+                </ul>
+            </div>
+        </div>
     </div>
-
-    <div>
-        <p class="work-title"><a href="https://www.thebarrel.ca">the barrel pizza</a> - assistant manager/cook</p>
-        <ul>
-            <li>led teams of cooks in a fast-paced environment, ensuring smooth operations and adherence to safety and sanitation standards.</li>
-            <li>trained new team members, enhancing staff efficiency and maintaining high customer satisfaction rates.</li>
-            <li>demonstrated effective conflict resolution skills, maintaining a positive and productive workplace culture.</li>
-        </ul>
-    </div>
-
-    <h2>hobbies</h2>
-    <ol>
-        <li><b>photography:</b> passionate about capturing landscapes and moments, honing creativity and attention to detail.</li>
-        <li><b>robotics:</b> active participant in the mcmaster robotics club, developing innovative solutions for automation challenges.</li>
-        <li><b>professional associations:</b> member of the ieee (institute of electrical and electronics engineers), staying updated on industry trends.</li>
-        <li><b>volunteering:</b> over 200 hours of community service at food kitchens and charitable organizations, focusing on meal preparation, distribution, and event coordination.</li>
-    </ol>
-
     <footer>
-        &copy; kevin herrera rodriguez
+        &copy; 2025 Kevin Herrera Rodriguez. All rights reserved.
     </footer>
+</div>
 </body>
 </html>
