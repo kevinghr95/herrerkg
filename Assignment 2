@@ -1,0 +1,76 @@
+-- Name: Kevin Garcia
+-- Student Number: 123456789
+-- Assignment: SQL Questions
+
+-- Question 1
+CREATE TABLE BATTERY ( charge_code      VARCHAR(20) PRIMARY KEY,
+    start_datetime   DATETIME NOT NULL,
+    charge_length    DECIMAL(5, 2) NOT NULL,
+    battery_model    CHAR(8) NOT NULL,
+    notes            TEXT            );
+-- Question 2
+
+-- Insert the record into BATTERY table
+INSERT INTO BATTERY (charge_code, start_datetime, charge_length, battery_model, notes)
+VALUES ('125', '2020-01-22 15:00:00', 1.25, 'XX1234-9', 'Battery not fully charged');
+
+-- Display contents of the BATTERY table
+SELECT * FROM BATTERY;
+-- Question 3
+
+-- Update the charge_length to 1.50 hours for the record with charge_code '125'
+UPDATE BATTERY
+SET charge_length = 1.50
+WHERE charge_code = '125';
+
+-- Question 4
+
+SELECT
+    MONTHNAME(OrderDate) AS `Month`,
+    COUNT(*) AS `# of Orders` FROM orders WHERE YEAR(OrderDate) = 2014
+    GROUP BY MONTH(OrderDate), MONTHNAME(OrderDate) ORDER BY MONTH(OrderDate);
+
+-- Question 5
+
+SELECT
+    c.CategoryID AS `ID`,
+    c.CategoryName AS `Category Name`,
+    ROUND(SUM(p.UnitPrice * p.UnitsInStock), 2) AS `Inventory Value`
+FROM products p
+JOIN categories c ON p.CategoryID = c.CategoryID
+GROUP BY c.CategoryID, c.CategoryName
+HAVING SUM(p.UnitPrice * p.UnitsInStock) > 10000
+ORDER BY `Inventory Value` DESC;
+
+-- Question 6
+
+SELECT
+    c.Country AS `Country`,
+    COUNT(*) AS `# of Shipments`,
+    ROUND(AVG(DATEDIFF(o.ShippedDate, o.OrderDate)), 1) AS `Avg Wait Time(d)`
+FROM orders o
+JOIN customers c ON o.CustomerID = c.CustomerID
+WHERE
+    YEAR(o.OrderDate) = 2013
+    AND o.ShippedDate IS NOT NULL
+GROUP BY c.Country
+HAVING COUNT(*) >= 3
+ORDER BY `Avg Wait Time(d)` DESC;
+
+-- Question 7
+
+SELECT
+    p.ProductName AS `Product`,
+    o.OrderDate AS `Order Date`,
+    od.Quantity AS `Quantity`
+FROM orders o
+JOIN order_details od ON o.OrderID = od.OrderID
+JOIN products p ON od.ProductID = p.ProductID
+JOIN categories c ON p.CategoryID = c.CategoryID
+JOIN customers cu ON o.CustomerID = cu.CustomerID
+WHERE
+    c.CategoryName = 'Beverages'
+    AND cu.Country = 'USA'
+    AND o.OrderDate BETWEEN '2014-10-15' AND '2015-04-17'
+    AND od.Quantity >= 12
+ORDER BY o.OrderDate ASC, od.Quantity DESC;
